@@ -3,3 +3,4 @@ aiohttp
 aiogram-dialog
 
 environs
+betterlogging
