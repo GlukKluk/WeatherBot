@@ -8,7 +8,6 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 from aiogram_dialog import setup_dialogs
-from environs import Env
 
 from tgbot.config import load_config
 from tgbot.handlers.user import router as user_router
@@ -42,6 +41,9 @@ def setup_logging():
     )
     logger = logging.getLogger(__name__)
     logger.info("Starting bot")
+    
+    api_logger = logging.getLogger("aiohttp.client")
+    api_logger.setLevel(log_level)
 
 
 async def main() -> None:

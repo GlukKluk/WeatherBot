@@ -16,3 +16,10 @@ class WeatherSG(StatesGroup):
     select_residence_st = State()
     saved_st = State()
     
+    
+class ForecastSG(StatesGroup):
+    """
+    Third level: FORECAST DATA
+    """
+    current_st = State()
+    

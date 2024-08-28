@@ -31,12 +31,9 @@ class WeatherApiSession:
                 return await response.json()
             
             case 400:
-                return "Невірно вказано місто"
+                return False
             
-            case 403:
-                return "Закінчився ліміт API."
-    
-    async def make_request(self, residence: str):
+    async def make_request(self, residence):
         session = await self.create_session()
         
         try:
@@ -46,6 +43,9 @@ class WeatherApiSession:
             ) as resp:
                 
                 result = await self.check_response(response=resp)
+                
+                # !!!
+                # await self.close()
             
                 return result
                 
