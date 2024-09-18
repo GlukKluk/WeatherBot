@@ -1,0 +1,8 @@
+services:
+  weather_bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./:/bot
+    restart: always
