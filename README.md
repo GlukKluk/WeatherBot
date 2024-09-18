@@ -34,3 +34,24 @@ pip install -r requirements.txt
 ```shell
 python3 run main.py
 ```
+
+## Using Docker
+1. Create image.
+```shell
+docker build -t weather-bot:latest .
+```
+
+2. Run Docker container.
+```shell
+docker run --name bot -d weather-bot:latest
+```
+
+3. View container logging.
+```shell
+docker container attach bot
+```
+
+4. Stop Docker container.
+```shell
+docker stop bot
+```

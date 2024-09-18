@@ -45,7 +45,7 @@ class WeatherApiSession:
                 result = await self.check_response(response=resp)
                 
                 # !!!
-                # await self.close()
+                await self.close()
             
                 return result
                 
